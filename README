@@ -1,0 +1,105 @@
+MATEI RARES ANDREI
+Grupa 315CC
+
+PROBLEMA CUTIILOR
+Timp de implementare - 2 ore
+Rezolvare - Citesc datele de intrare si creez un ok care retine 1
+initial, reprezentand faptul ca jocul inca nu este pierdut.
+Parcurg sirul de numere citit. Daca pozitia i nu este marcata
+in vectorul fr, atunci cutia respectiva face parte dintr-un ciclu nou.
+Salvez intr-un vector nou ls valoarea i reprezentand inceputul ciclului.
+Parcurg acest ciclu nou, marcand in fr fiecare cutie la care ajung.
+Daca lungimea acestui ciclu este mai mare decat jumatate din numarul
+total de cutii atunci jocul este pierdut, asa ca atribui variabilei
+ok valoarea 0. In functie de variabila ok afisez "Da" sau "Nu",
+apoi folosind vectorul ls afisez fiecare ciclu diferit.
+
+NUMERE COMPLEXE LUNGI
+Timp de implementare - 5 ore
+Rezolvare - Citesc de la tastatura dimensiunea numerelor, primul numar
+si primul semn. Cat timp semnul este diferit de 0 citesc urmatorul numar
+si rezolv operatia citita. Adunarea si scaderea au fost impartite in 2
+operatii mai mici, anume adunarea partii reale si adunarea partii imaginare,
+respectiv scaderea partii reale si scaderea partii imaginare.
+Pentru adunarea partilor reale am considerat 4 posibilitati diferite.
+Daca ambele numere sunt pozitive atunci adunarea este realizata cu ajutorul
+unui algoritm.
+Daca primul numar este negativ si al doilea pozitiv (a+b,a<0,b>0),
+atunci operatia este privita drept o scadere(a+b=b-|a|,a<0,b>0)
+ex: -2+5=5-|-2|=5-2=3
+Daca primul numar este pozitiv si al doilea negativ atunci operatia
+este privita drept o scadere (a+b=a-|b|,a>0,b<0)
+ex: 7+(-3)=7-|-3|=7-3=4
+Daca ambele numere sunt negative atunci este realizata suma modulelor
+lor, rezultatul fiind apoi retinut drept negativ
+ex: -2+(-3)=(|-2|+|-3|)*(-1)=(2+3)*(-1)=5*(-1)=-5
+Pentru scaderea partilor reale a fost folosit un procedeu similar celui
+de la adunarea partilor reale, singura diferenta majora fiind la cazul
+diferentei a doua numere pozitive, caz in care a trebuit verificat care este
+cel mai mare. In cazul in care primul numar este mai mic decat al doilea
+valorile sunt inversate, rezultatul fiind apoi retinut drept negativ.
+ex: 3-5=(5-3)*(-1)=2*(-1)=-2
+Singura diferenta dintre operatia pe partea reala si operatia pe partea
+imaginara este pozitia din vector de la care folosesc caracterele.
+Rezultatele operatiilor au fost retinute intr-un vector de caractere
+auxiliar care a fost copiat la final in vectorul primului numar,
+afisandu-l apoi si citind urmatoarea operatie.
+
+TRANSMITERE BRUIATA
+Timp de implementare - 7 ore
+Rezolvare - Citesc textul ce trebuie modificat apoi operatia ce trebuie
+realizata.
+Codificarea A este realizata cu ajutorul unei matrici care are numarul de
+linii egal cu lungimea cheii. Cat timp nu am parcurs tot textul, parcurg
+pe coloane matricea si introduc caracter cu caracter textul in matrice.
+Daca termin de copiat textul si ultima coloana a matricii nu este completa,
+atunci o completez cu spatii.
+Dupa sortez literele cheii in ordine alfabetica, retinand pentru fiecare
+pozitia sa initiala din cheia originala intr-un vector.
+Apoi construiesc un text auxiliar adaugandu-i
+liniile matricii in ordinea data de vetorul respectiv.
+In final copiez peste textul inital pe cel auxiliar.
+
+Decodificarea A este realizata cu ajutorul unei matrici ce care numarul
+de linii egal cu lungimea cheii.
+Calculez numarul de coloane al acestei matrici cu o formula.
+Daca textul nu acopera toata matricea(nu are nrlinii*nrcoloane caractere),
+il completez cu spatii.
+Sortez literele cheii in ordine alfabetica, retinand pentru fiecare
+pozitia sa initiala din cheia originala intr-un vector.
+Apoi impart textul in bucati de lungime egala cu numarul de coloane,
+si introduc fiecare bucata de caractere pe linia data de
+vectorul obtinut anterior.
+Parcurg apoi matricea pe coloane construind textul decodificat caracter
+cu caracter.
+
+Codificarea B este realizata prin permutarea la dreapta a unui numar dat
+de caractere, adaugand apoi acestora numarul dat. Pentru fiecare operatie
+am folosit cate o functie separata.
+
+Decodificarea B este realizata prin scaderea din primele n caractere numarul
+n, apoi facand o permutare la stanga de n caractere (n este dat).
+Pentru fiecare operatie am folosit cate o functie separata.
+
+La final afisez textul obtinut si il citesc urmatoarea operatie,
+programul oprindu-se cand este citit cuvantul "STOP".
+
+CAR DEALER
+Timp de implementare - 4 ore
+Rezolvare - 
+Pentru task-ul 'a' am folosit un vector de 4 cuvinte in care retin tipurile
+de combustibil si un vector ce contorizeaza cate masini folosesc
+fiecare combustibil.
+Pentru task-ul 'b' am folosit un vector de cuvinte ce retine brand-urile
+masinilor o singura data in ordinea citirii lor. Folosind acest vector
+am calculat consumul total si suma platita total pentru combustibil
+pentru fiecare brand in parte, rezultatele fiind retinute in doi vectori
+de tip double diferiti.
+Pentrul task-ul 'c' am verificat fiecare numar citit in parte daca respecta
+regulile din cerinta. Pe scurt, acesta poate fi de forma:
+"LCCLLL","LCCCLLL","LLCCLLL","LLCCCLLL", unde L reprezinta o litera si
+C reprezinta o cifra. Folosind variabila poz am parcurs numarul si am
+verificat daca acesta are prefixul de forma "LCC", "LCCC", "LLCC" sau "LLCCC".
+Apoi am verificat daca urmatoarele 3 caractere sunt litere si in final
+am verificat lungimea acestuia. Daca mai sunt caractere neverificate inseamna
+ca numarul nu respecta normele din cerinta.
